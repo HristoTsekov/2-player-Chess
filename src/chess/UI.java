@@ -3,11 +3,15 @@ package chess;
 import pieces.Piece;
 
 import javax.swing.*;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 
 public class UI {
-    JFrame frame = new JFrame();
-    int width;
-    int height;
+    private JFrame frame = new JFrame();
+    private int width;
+    private int height;
+    private ChessGrid chessGrid = new ChessGrid(0, 0, 600,
+            600);
 
     UI(int widthSize, int heightSize, String name) {
         this.width = widthSize - 40;
@@ -17,7 +21,12 @@ public class UI {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLocationRelativeTo(null);
         frame.setTitle(name);
-        frame.setResizable(true);
+        frame.setResizable(false);
+        frame.setVisible(true);
+    }
+
+    public void drawChessGrid() {
+        frame.add(chessGrid);
         frame.setVisible(true);
     }
 
