@@ -19,6 +19,10 @@ public abstract class PlayingPiece extends JButton implements ChangeListener {
         getModel().addChangeListener(this);
     }
 
+    public boolean isLegalMove(int currX, int currY, int nextY, int nextX) {
+        return false;
+    }
+
     public void paintComponent(Graphics g) {
         //System.out.println("paintComponent " + x + " " + y);
         Graphics2D graph = (Graphics2D) g;
