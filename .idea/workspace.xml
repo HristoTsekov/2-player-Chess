@@ -2,14 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b76de7bd-e46c-4319-898f-766bc0d9f20a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pieces/Bishop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pieces/Bishop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pieces/King.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pieces/King.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pieces/Knight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pieces/Knight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pieces/Pawn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pieces/Pawn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pieces/PlayingPiece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pieces/PlayingPiece.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -22,7 +32,9 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$USER_HOME$/IdeaProjects/Chess" />
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
@@ -35,6 +47,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -50,9 +74,26 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="390" y="190" key="com.intellij.ide.util.TipDialog" timestamp="1590054953014">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="694" y="84" key="#com.intellij.ide.util.MemberChooser" timestamp="1590527308867">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="694" y="84" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1590527308867" />
+    <state x="611" y="301" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1590524483743">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="611" y="301" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1536.824@0.0.1536.824" timestamp="1590524483743" />
+    <state x="570" y="297" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1590527340514">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="570" y="297" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.824@0.0.1536.824" timestamp="1590527340514" />
+    <state x="614" y="75" key="FileChooserDialogImpl" timestamp="1590574826443">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="614" y="75" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1590574826443" />
+    <state x="439" y="215" key="com.intellij.ide.util.TipDialog" timestamp="1590524470753">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="390" y="190" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1590054953014" />
+    <state x="439" y="215" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1590524470753" />
   </component>
 </project>
