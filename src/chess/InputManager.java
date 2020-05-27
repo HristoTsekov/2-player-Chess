@@ -1,6 +1,6 @@
 //package chess;
 //
-//import chess.figures.PlayingPiece;
+//
 //
 //import javax.swing.*;
 //import javax.swing.event.ChangeEvent;

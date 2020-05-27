@@ -2,7 +2,7 @@ package pieces;
 
 public class King extends Piece {
 
-    boolean isBlack;
+private boolean isBlack;
 
     public King(int x, int y, boolean isBlack) {
         super(x, y);
