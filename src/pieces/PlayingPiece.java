@@ -19,8 +19,8 @@ public abstract class PlayingPiece extends JButton implements ChangeListener {
         getModel().addChangeListener(this);
     }
 
-    public boolean isLegalMove(int currX, int currY, int nextY, int nextX) {
-        return false;
+    public boolean moveIsLegal(int newX, int newY) {
+        return (newX >= 0 && newX < 8) && (newY >= 0 && newY < 8);
     }
 
     public void paintComponent(Graphics g) {
