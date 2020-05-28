@@ -5,7 +5,7 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import java.awt.*;
 
-public abstract class PlayingPiece extends JButton implements ChangeListener {
+public abstract class PlayingPiece extends JButton {
     private int x;
     private int y;
     private boolean pressed;
@@ -13,18 +13,14 @@ public abstract class PlayingPiece extends JButton implements ChangeListener {
     public PlayingPiece(int x, int y) {
         this.x = x;
         this.y = y;
+        setPreferredSize(new Dimension(40, 40));
 
         setContentAreaFilled(false);
         setBorderPainted(false);
-        getModel().addChangeListener(this);
-    }
-
-    public boolean moveIsLegal(int newX, int newY) {
-        return (newX >= 0 && newX < 8) && (newY >= 0 && newY < 8);
     }
 
     public void paintComponent(Graphics g) {
-        //System.out.println("paintComponent " + x + " " + y);
+
         Graphics2D graph = (Graphics2D) g;
 
         ImageIcon imageIcon = new ImageIcon(getImagePath());
@@ -37,18 +33,16 @@ public abstract class PlayingPiece extends JButton implements ChangeListener {
 
     public void render() {
         if (pressed) {
-            x = (int) MouseInfo.getPointerInfo().getLocation().getX();
-            y = (int) MouseInfo.getPointerInfo().getLocation().getY();
-            System.out.println("render " + x + " " + y);
-            this.update(getGraphics());
+            int x = (int) MouseInfo.getPointerInfo().getLocation().getX() - getLocation().x;
+            int y = (int) MouseInfo.getPointerInfo().getLocation().getY() - getLocation().y;
+            System.out.println("x " + x + " y " + y);
+            System.out.println("real x " + this.x + " y " + this.y);
+            repaint();
         }
     }
 
-
-    @Override
-    public void stateChanged(ChangeEvent changeEvent) {
-        System.out.println("stateChanged");
-        ButtonModel model = (ButtonModel) changeEvent.getSource();
-        pressed = model.isPressed();
+    public void setPressed(boolean pressed) {
+        this.pressed = pressed;
     }
 }
+

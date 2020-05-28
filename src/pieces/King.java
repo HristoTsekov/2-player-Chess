@@ -127,9 +127,4 @@ public class King extends PlayingPiece {
         return isValid;
 
     }
-
-    @Override
-    public String getImagePath() {
-        return null;
-    }
 }

@@ -35,8 +35,4 @@ public class Knight extends PlayingPiece {
 
     }
 
-    @Override
-    public String getImagePath() {
-        return null;
-    }
 }

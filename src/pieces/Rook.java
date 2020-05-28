@@ -90,8 +90,5 @@ public class Rook extends PlayingPiece {
 
     }
 
-    @Override
-    public String getImagePath() {
-        return null;
-    }
+
 }

@@ -39,10 +39,4 @@ public class Pawn extends PlayingPiece {
 
     }
 
-    @Override
-    public String getImagePath() {
-        return null;
-    }
-
-
 }

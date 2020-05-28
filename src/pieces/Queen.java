@@ -127,8 +127,5 @@ public class Queen extends PlayingPiece {
 
     }
 
-    @Override
-    public String getImagePath() {
-        return null;
-    }
+
 }

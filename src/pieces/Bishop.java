@@ -60,8 +60,4 @@ public class Bishop extends PlayingPiece {
 
     }
 
-    @Override
-    public String getImagePath() {
-        return null;
-    }
 }
