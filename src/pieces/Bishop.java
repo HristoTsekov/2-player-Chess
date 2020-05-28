@@ -1,6 +1,6 @@
 package pieces;
 
-public class Bishop extends Piece {
+public class Bishop extends PlayingPiece {
     private boolean isBlack;
 
     public Bishop(int x, int y, boolean isBlack) {

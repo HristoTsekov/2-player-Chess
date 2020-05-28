@@ -1,13 +1,9 @@
 package chess;
 
-import pieces.Piece;
+import pieces.PlayingPiece;
 
 import javax.swing.*;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
 import java.awt.*;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
@@ -37,13 +33,13 @@ public class UI implements MouseListener {
         frame.setVisible(true);
     }
 
-    public void addGraphic(Piece piece) {
+    public void addGraphic(PlayingPiece piece) {
         piece.addMouseListener(this);
         frame.add(piece);
         frame.setVisible(true);
     }
 
-    public void removeGraphic(Piece piece) {
+    public void removeGraphic(PlayingPiece piece) {
         frame.remove(piece);
     }
 

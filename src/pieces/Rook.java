@@ -1,6 +1,6 @@
 package pieces;
 
-public class Rook extends Piece {
+public class Rook extends PlayingPiece {
 
     private boolean isBlack;
 

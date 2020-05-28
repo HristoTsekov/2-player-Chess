@@ -1,6 +1,6 @@
 package pieces;
 
-public class Pawn extends Piece {
+public class Pawn extends PlayingPiece {
 
     private boolean isBlack;
 

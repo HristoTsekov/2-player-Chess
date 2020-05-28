@@ -8,12 +8,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.logging.Logger;
 
-public abstract class Piece extends JButton {
+public abstract class PlayingPiece extends JButton {
     private int x;
     private int y;
     private boolean pressed;
 
-    public Piece(int x, int y) {
+    public PlayingPiece(int x, int y) {
         this.x = x;
         this.y = y;
         setPreferredSize(new Dimension(40, 40));

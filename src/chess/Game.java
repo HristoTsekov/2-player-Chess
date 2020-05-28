@@ -2,12 +2,10 @@ package chess;
 
 import pieces.*;
 
-import java.util.ArrayList;
-
 public class Game {
 
-    private Piece[][] board = new Piece[8][8];
-    private Piece pressedPiece;
+    private PlayingPiece[][] board = new PlayingPiece[8][8];
+    private PlayingPiece pressedPiece;
 
     public Game() {
 
@@ -19,7 +17,7 @@ public class Game {
             public void onMousePressed(int x, int y) {
                 int row = (x / 70) - 1;
                 int col = (y / 70) - 1;
-                Piece piece = board[col][row];
+                PlayingPiece piece = board[col][row];
                 System.out.println("piece " + piece);
                 if (piece != null) {
                     pressedPiece = piece;
@@ -67,8 +65,8 @@ public class Game {
                 board[i][j] =null;
             }
         }
-        for (Piece[] playingPieces : board) {
-            for (Piece playingPiece : playingPieces) {
+        for (PlayingPiece[] playingPieces : board) {
+            for (PlayingPiece playingPiece : playingPieces) {
                 if (playingPiece != null) {
                     ui.addGraphic(playingPiece);
                 }
@@ -78,8 +76,8 @@ public class Game {
 
     void play() {
         while (true) {
-            for (Piece[] playingPieces : board) {
-                for (Piece playingPiece : playingPieces) {
+            for (PlayingPiece[] playingPieces : board) {
+                for (PlayingPiece playingPiece : playingPieces) {
                     if (playingPiece != null) {
                         playingPiece.render();
                     }
