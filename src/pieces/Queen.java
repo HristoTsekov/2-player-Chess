@@ -2,8 +2,16 @@ package pieces;
 
 public class Queen extends PlayingPiece {
 
-    public Queen(int x, int y) {
+    private boolean isBlack;
+
+    public Queen(int x, int y, boolean isBlack) {
         super(x, y);
+        this.isBlack = isBlack;
+    }
+
+    @Override
+    public String getImagePath() {
+        return isBlack ? "src\\images\\blackQueen.png" : "src\\images\\whiteQueen.png";
     }
 
     @Override
@@ -126,6 +134,5 @@ public class Queen extends PlayingPiece {
         return isValid;
 
     }
-
 
 }

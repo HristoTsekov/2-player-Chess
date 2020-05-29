@@ -2,10 +2,17 @@ package pieces;
 
 public class Pawn extends PlayingPiece {
 
+    private boolean isBlack;
     private boolean hasBeenMoved;
 
-    public Pawn(int x, int y) {
+    public Pawn(int x, int y, boolean isBlack) {
         super(x, y);
+        this.isBlack = isBlack;
+    }
+
+    @Override
+    public String getImagePath() {
+        return isBlack ? "src\\images\\blackPawn.png" : "src\\images\\whitePawn.png";
     }
 
     @Override

@@ -5,6 +5,7 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import java.awt.*;
 
+
 public abstract class PlayingPiece extends JButton {
     private int x;
     private int y;
@@ -30,6 +31,10 @@ public abstract class PlayingPiece extends JButton {
     }
 
     public abstract String getImagePath();
+
+    public boolean moveIsLegal(int newX, int newY) {
+        return true;
+    }
 
     public void render() {
         if (pressed) {
