@@ -9,9 +9,10 @@ import java.awt.event.ActionListener;
 import java.util.logging.Logger;
 
 public abstract class Piece extends JButton {
+
     private int x;
     private int y;
-    private boolean pressed;
+//    private boolean pressed;
 
     public Piece(int x, int y) {
         this.x = x;
@@ -34,17 +35,24 @@ public abstract class Piece extends JButton {
 
     public abstract String getImagePath();
 
-    public void render() {
-        if (pressed) {
-            int x = (int) MouseInfo.getPointerInfo().getLocation().getX() - getLocation().x;
-            int y = (int) MouseInfo.getPointerInfo().getLocation().getY() - getLocation().y;
-            System.out.println("x " + x + " y " + y);
-            System.out.println("real x " + this.x + " y " + this.y);
-            repaint();
-        }
+//    //public void render() {
+//   //     if (pressed) {
+//    //        x = (int) MouseInfo.getPointerInfo().getLocation().getX() - getLocation().x;
+//            y = (int) MouseInfo.getPointerInfo().getLocation().getY() - getLocation().y;
+//            repaint();
+//        }
+//    }
+
+    public void setX(int x) {
+        this.x = x;
     }
 
-    public void setPressed(boolean pressed) {
-        this.pressed = pressed;
+    public void setY(int y) {
+        this.y = y;
     }
+
+//    public void setPressed(boolean pressed) {
+//        System.out.println("set pressed " + pressed);
+//        this.pressed = pressed;
+//    }
 }

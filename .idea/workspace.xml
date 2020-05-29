@@ -2,15 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b76de7bd-e46c-4319-898f-766bc0d9f20a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/chess/MousePressedListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TwoPlayerChess/chess/Game$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TwoPlayerChess/chess/Game$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TwoPlayerChess/chess/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TwoPlayerChess/chess/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TwoPlayerChess/chess/MousePressedListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TwoPlayerChess/chess/MousePressedListener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TwoPlayerChess/chess/UI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TwoPlayerChess/chess/UI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TwoPlayerChess/images/chessboard2.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TwoPlayerChess/pieces/Piece.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TwoPlayerChess/pieces/Piece.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/chess/ChessGrid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chess/ChessGrid.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/chess/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chess/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/chess/InputManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/chess/MousePressedListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chess/MousePressedListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/chess/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chess/UI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/chessboard.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pieces/Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pieces/Piece.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -39,18 +41,19 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Христо\Desktop\TwoPlayerChess\src\images" />
-      <recent name="C:\Users\Христо\Desktop\TwoPlayerChess\src\chess" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="Chess" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="chess" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="Chess" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Христо\Desktop\TwoPlayerChess\src\images" />
+      <recent name="C:\Users\Христо\Desktop\TwoPlayerChess\src\chess" />
     </key>
   </component>
   <component name="RunManager">
@@ -84,61 +87,81 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="488" y="82" key="#com.intellij.ide.util.MemberChooser" timestamp="1590687573737">
+    <state x="488" y="82" key="#com.intellij.ide.util.MemberChooser" timestamp="1590765278265">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="488" y="82" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1590687573737" />
+    <state x="488" y="82" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1590765278265" />
+    <state x="484" y="254" width="397" height="225" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1590694360847">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="484" y="254" width="397" height="225" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1366.728@0.0.1366.728" timestamp="1590694360847" />
     <state x="413" y="113" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1590416139423">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="113" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1590416139423" />
+    <state x="342" y="0" key="CommitChangelistDialog2" timestamp="1590762547536">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="342" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1590762547536" />
+    <state x="129" y="54" key="DiffContextDialog" timestamp="1590762532662">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="129" y="54" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1590762532662" />
     <state x="463" y="121" key="FileChooserDialogImpl" timestamp="1590608671751">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="121" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1590608671751" />
-    <state width="1306" height="111" key="GridCell.Tab.0.bottom" timestamp="1590693201087">
+    <state width="1306" height="110" key="GridCell.Tab.0.bottom" timestamp="1590766828036">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1306" height="111" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1590693201087" />
-    <state width="1306" height="111" key="GridCell.Tab.0.center" timestamp="1590693201086">
+    <state width="1306" height="110" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1590766828036" />
+    <state width="1306" height="110" key="GridCell.Tab.0.center" timestamp="1590766828036">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1306" height="111" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1590693201086" />
-    <state width="1306" height="111" key="GridCell.Tab.0.left" timestamp="1590693201085">
+    <state width="1306" height="110" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1590766828036" />
+    <state width="1306" height="110" key="GridCell.Tab.0.left" timestamp="1590766828035">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1306" height="111" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1590693201085" />
-    <state width="1306" height="111" key="GridCell.Tab.0.right" timestamp="1590693201086">
+    <state width="1306" height="110" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1590766828035" />
+    <state width="1306" height="110" key="GridCell.Tab.0.right" timestamp="1590766828036">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1306" height="111" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1590693201086" />
-    <state width="1306" height="306" key="GridCell.Tab.1.bottom" timestamp="1590685236705">
+    <state width="1306" height="110" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1590766828036" />
+    <state width="1306" height="306" key="GridCell.Tab.1.bottom" timestamp="1590701056691">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1306" height="306" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1590685236705" />
-    <state width="1306" height="306" key="GridCell.Tab.1.center" timestamp="1590685236704">
+    <state width="1306" height="306" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1590701056691" />
+    <state width="1306" height="306" key="GridCell.Tab.1.center" timestamp="1590701056690">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1306" height="306" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1590685236704" />
-    <state width="1306" height="306" key="GridCell.Tab.1.left" timestamp="1590685236704">
+    <state width="1306" height="306" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1590701056690" />
+    <state width="1306" height="306" key="GridCell.Tab.1.left" timestamp="1590701056690">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1306" height="306" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1590685236704" />
-    <state width="1306" height="306" key="GridCell.Tab.1.right" timestamp="1590685236705">
+    <state width="1306" height="306" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1590701056690" />
+    <state width="1306" height="306" key="GridCell.Tab.1.right" timestamp="1590701056690">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1306" height="306" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1590685236705" />
-    <state x="390" y="190" key="com.intellij.ide.util.TipDialog" timestamp="1590593939300">
+    <state width="1306" height="306" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1590701056690" />
+    <state x="524" y="414" key="ReplaceDuplicatesPrompt" timestamp="1590763994038">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="390" y="190" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1590593939300" />
-    <state x="413" y="138" key="extract.method.dialog" timestamp="1590518454488">
+    <state x="524" y="414" key="ReplaceDuplicatesPrompt/0.0.1366.728@0.0.1366.728" timestamp="1590763994038" />
+    <state x="390" y="190" key="com.intellij.ide.util.TipDialog" timestamp="1590760644515">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="413" y="138" key="extract.method.dialog/0.0.1366.728@0.0.1366.728" timestamp="1590518454488" />
+    <state x="390" y="190" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1590760644515" />
+    <state x="413" y="138" width="540" height="486" key="extract.method.dialog" timestamp="1590763977538">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="413" y="138" width="540" height="486" key="extract.method.dialog/0.0.1366.728@0.0.1366.728" timestamp="1590763977538" />
     <state x="65" y="0" key="new project wizard" timestamp="1590087455946">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="65" y="0" key="new project wizard/0.0.1366.728@0.0.1366.728" timestamp="1590087455946" />
+    <state x="425" y="0" key="refactoring.ChangeSignatureDialog" timestamp="1590763822350">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="425" y="0" key="refactoring.ChangeSignatureDialog/0.0.1366.728@0.0.1366.728" timestamp="1590763822350" />
   </component>
 </project>

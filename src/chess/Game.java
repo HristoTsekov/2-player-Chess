@@ -2,40 +2,61 @@ package chess;
 
 import pieces.*;
 
-import java.util.ArrayList;
-
 public class Game {
+
+    UI ui;
 
     private Piece[][] board = new Piece[8][8];
     private Piece pressedPiece;
+    private int selectedRow;
+    private int selectedCol;
 
     public Game() {
 
-        UI ui = new UI(600, 600, "Chess");
+        ui = new UI(600, 600, "Chess");
         init(ui);
         ui.drawChessGrid();
         ui.setOnMousePressedListener(new MousePressedListener() {
             @Override
             public void onMousePressed(int x, int y) {
-                int row = (x / 70) - 1;
-                int col = (y / 70) - 1;
-                Piece piece = board[col][row];
-                System.out.println("piece " + piece);
+                System.out.println("pressed x " + x + " y " + y);
+                int col = getCellByCordinate(x);
+                int row = getCellByCordinate(y);
+
+                Piece piece = board[row][col];
                 if (piece != null) {
+                    System.out.println("set pressed " + piece);
                     pressedPiece = piece;
-                    piece.setPressed(true);
+                    selectedCol = col;
+                    selectedRow = row;
+                    //piece.setPressed(true);
                 }
 
-                System.out.println("row " + row + "col " + col);
+                System.out.println("row " + col + "col " + row);
             }
 
             @Override
-            public void onMouseReleased() {
+            public void onMouseReleased(int x, int y) {
                 if (pressedPiece != null) {
-                    pressedPiece.setPressed(false);
+                    int col = getCellByCordinate(x);
+                    int row = getCellByCordinate(y);
+                    ui.removePiece(board[row][col]);
+
+                    board[selectedRow][selectedCol] = null;
+                    board[row][col] = pressedPiece;
+                    pressedPiece = null;
+                    //pressedPiece.setPressed(false);
                 }
             }
         });
+    }
+
+    private int getCellByCordinate(int cord) {
+        int row = (cord / 67);
+        if (row > 7) {
+            row = 7;
+        }
+        return row;
     }
 
     public void init(UI ui) {
@@ -64,7 +85,7 @@ public class Game {
         board[7][7] = new Rook(figureWidth * 7, figureWidth * 7, false);
         for (int i = 2; i < board.length - 2; i++) {
             for (int j = 0; j < board[i].length; j++) {
-                board[i][j] =null;
+                board[i][j] = null;
             }
         }
         for (Piece[] playingPieces : board) {
@@ -78,13 +99,8 @@ public class Game {
 
     void play() {
         while (true) {
-            for (Piece[] playingPieces : board) {
-                for (Piece playingPiece : playingPieces) {
-                    if (playingPiece != null) {
-                        playingPiece.render();
-                    }
-                }
-            }
+            System.out.print("");
+            ui.movePiece(pressedPiece);
         }
     }
 }

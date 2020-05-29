@@ -43,8 +43,10 @@ public class UI implements MouseListener {
         frame.setVisible(true);
     }
 
-    public void removeGraphic(Piece piece) {
-        frame.remove(piece);
+    public void removePiece(Piece piece) {
+        if (piece != null) {
+            frame.remove(piece);
+        }
     }
 
     public int getWidth() {
@@ -59,6 +61,14 @@ public class UI implements MouseListener {
         mousePressedListener = listener;
     }
 
+    public void movePiece(Piece piece) {
+        if (piece != null) {
+            piece.setX(getMouseX() - 34);
+            piece.setY(getMouseY() - 34);
+            piece.repaint();
+        }
+    }
+
     @Override
     public void mouseClicked(MouseEvent mouseEvent) {
 
@@ -67,16 +77,24 @@ public class UI implements MouseListener {
     @Override
     public void mousePressed(MouseEvent mouseEvent) {
         if (mousePressedListener != null) {
-            int x = (int) MouseInfo.getPointerInfo().getLocation().getX();
-            int y = (int) MouseInfo.getPointerInfo().getLocation().getY();
+            int x = getMouseX();
+            int y = getMouseY();
             mousePressedListener.onMousePressed(x, y);
         }
+    }
+
+    private int getMouseY() {
+        return (int) MouseInfo.getPointerInfo().getLocation().getY() - frame.getLocation().y - 30;
+    }
+
+    private int getMouseX() {
+        return (int) MouseInfo.getPointerInfo().getLocation().getX() - frame.getLocation().x - 10;
     }
 
     @Override
     public void mouseReleased(MouseEvent mouseEvent) {
         if (mousePressedListener != null) {
-            mousePressedListener.onMouseReleased();
+            mousePressedListener.onMouseReleased(getMouseX(), getMouseY());
         }
     }
 
