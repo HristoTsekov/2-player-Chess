@@ -9,7 +9,7 @@ public class Knight extends Piece {
 
     @Override
     public String getImagePath() {
-        return isBlack ? "src\\images\\blackKnight.png" : "src\\images\\whiteKnight.png";
+        return isBlack ? "src/images/blackKnight.png" : "src/images/whiteKnight.png";
     }
 
     public boolean isLegalMove(int currX, int currY, int nextY, int nextX, Piece[][] board) {
@@ -22,7 +22,13 @@ public class Knight extends Piece {
                 || (currX - nextX == 2 && currY - nextY == 1)
                 || (currY - nextY == 2 && nextX - currX == 1)
                 || (currY - nextY == 2 && currX - nextX == 1))
-                && isBlack != board[nextY][nextX].isBlack());
+                && (board[nextY][nextX] == null || isBlack != board[nextY][nextX].isBlack()));
+    }
+
+    @Override
+    public void setPaintedX(int x) {
+        System.out.println("set painted " + x);
+        super.setPaintedX(x);
     }
 }
 

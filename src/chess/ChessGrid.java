@@ -21,7 +21,7 @@ public class ChessGrid extends JComponent {
     public void paintComponent(Graphics g) {
         Graphics2D graph = (Graphics2D) g;
 
-        ImageIcon imageIcon = new ImageIcon("src\\images\\chessboard.png");
+        ImageIcon imageIcon = new ImageIcon("src/images/chessboard.png");
         Image image = imageIcon.getImage();
 
         graph.drawImage(image, this.x, this.y, this.width, this.height, null);

@@ -9,7 +9,7 @@ public class Rook extends Piece {
 
     @Override
     public String getImagePath() {
-        return isBlack ? "src\\images\\blackRook.png" : "src\\images\\whiteRook.png";
+        return isBlack ? "src/images/blackRook.png" : "src/images/whiteRook.png";
     }
     @Override
     public boolean isLegalMove(int currX, int currY, int nextY, int nextX,Piece[][] board) {
@@ -19,12 +19,12 @@ public class Rook extends Piece {
             for (int i = currX + 1; i < nextX; i++) {
                 if (board[currY][i]!= null) return false;
             }
-            return board[nextY][nextX].isBlack() != isBlack;
+            return board[nextY][nextX] == null || board[nextY][nextX].isBlack() != isBlack;
         }
         else for (int i = currX - 1; i > nextX ; i--) {
             if (board[currY][i] != null) return false;
         }
-        return board[nextY][nextX].isBlack() != isBlack;
+        return board[nextY][nextX] == null || board[nextY][nextX].isBlack() != isBlack;
 
     }
 
@@ -34,12 +34,12 @@ public class Rook extends Piece {
             for (int i = currY + 1; i < nextY; i++) {
                 if (board[i][currX] != null) return false;
             }
-            return board[nextY][nextX].isBlack() != isBlack;
+            return board[nextY][nextX] == null || board[nextY][nextX].isBlack() != isBlack;
         }
         else for (int i = currY - 1; i > nextY ; i--) {
             if (board[i][currX] != null) return false;
         }
-        return board[nextY][nextX].isBlack() != isBlack;
+        return board[nextY][nextX] == null || board[nextY][nextX].isBlack() != isBlack;
     }
 
     return false;

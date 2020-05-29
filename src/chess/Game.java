@@ -2,14 +2,20 @@ package chess;
 
 import pieces.*;
 
+import java.util.logging.Handler;
+
 public class Game {
 
-    UI ui;
+    private UI ui;
 
     private Piece[][] board = new Piece[8][8];
     private Piece pressedPiece;
     private int selectedRow;
     private int selectedCol;
+    private int selectedX;
+    private int selectedY;
+
+    private boolean isWhiteTurn = true;
 
     public Game() {
 
@@ -25,11 +31,16 @@ public class Game {
 
                 Piece piece = board[row][col];
                 if (piece != null) {
+                    if ((piece.isBlack && isWhiteTurn) || (!piece.isBlack && !isWhiteTurn)) {
+                        return;
+                    }
+
                     System.out.println("set pressed " + piece);
                     pressedPiece = piece;
                     selectedCol = col;
                     selectedRow = row;
-                    //piece.setPressed(true);
+                    selectedX = piece.getPaintedX();
+                    selectedY = piece.getPaintedY();
                 }
 
                 System.out.println("row " + col + "col " + row);
@@ -40,14 +51,68 @@ public class Game {
                 if (pressedPiece != null) {
                     int col = getCellByCordinate(x);
                     int row = getCellByCordinate(y);
-                    boolean legalMove = pressedPiece.isLegalMove(selectedRow, selectedCol, row, col, board);
-                    System.out.println("legalMove " + legalMove);
-                    ui.removePiece(board[row][col]);
+                    boolean legalMove = pressedPiece.isLegalMove(selectedCol, selectedRow, row, col, board);
+                    if (legalMove) {
+                        Piece takenPiece = board[row][col];
+                        ui.removePiece(takenPiece);
+                        board[selectedRow][selectedCol] = null;
+                        board[row][col] = pressedPiece;
 
-                    board[selectedRow][selectedCol] = null;
-                    board[row][col] = pressedPiece;
-                    pressedPiece = null;
-                    //pressedPiece.setPressed(false);
+                        //check for check
+                        //find King position
+                        int kingCol = 0;
+                        int kingRow = 0;
+                        for (int i = 0; i < board.length; i++) {
+                            for (int j = 0; j < board[i].length; j++) {
+                                Piece playingPiece = board[i][j];
+                                if (playingPiece instanceof King && playingPiece.isBlack == !isWhiteTurn) {
+                                    kingCol = i;
+                                    kingRow = j;
+                                }
+                            }
+                        }
+                        //check every opponent figure if it has valid move to the king
+                        boolean isKingUnderThread = false;
+                        for (int i = 0; i < board.length; i++) {
+                            for (int j = 0; j < board[i].length; j++) {
+                                Piece playingPiece = board[i][j];
+                                if (playingPiece != null && playingPiece.isBlack == isWhiteTurn) {
+
+                                    if (playingPiece.isLegalMove(j, i, kingCol, kingRow, board)) {
+                                        isKingUnderThread = true;
+                                        break;
+                                    }
+                                }
+                            }
+                            if (isKingUnderThread) {
+                                break;
+                            }
+                        }
+                        //return the move if the king is under thread
+                        if (isKingUnderThread) {
+                            Piece temp = pressedPiece;
+                            pressedPiece = null;
+                            board[selectedRow][selectedCol] = temp;
+                            board[row][col] = takenPiece;
+                            System.out.println(temp + " selectedX thread " + selectedX + " selectedY " + selectedY);
+                            ui.movePiece(temp, selectedX, selectedY);
+                            ui.addGraphic(takenPiece);
+                            ui.drawChessGrid();
+                        }
+                        System.out.println("isKingUnderThread " + isKingUnderThread);
+                        pressedPiece = null;
+
+                        if (!isKingUnderThread) {
+                            isWhiteTurn = !isWhiteTurn;
+                        }
+                    } else {
+                        Piece temp = pressedPiece;
+                        pressedPiece = null;
+                        System.out.println("selectedX " + selectedX + " selectedY " + selectedY);
+
+                        ui.movePiece(temp, selectedX, selectedY);
+                    }
+                    System.out.println("legalMove " + legalMove);
                 }
             }
         });
@@ -90,6 +155,7 @@ public class Game {
                 board[i][j] = null;
             }
         }
+
         for (Piece[] playingPieces : board) {
             for (Piece playingPiece : playingPieces) {
                 if (playingPiece != null) {

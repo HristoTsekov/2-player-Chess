@@ -10,7 +10,7 @@ public class Pawn extends Piece {
 
     @Override
     public String getImagePath() {
-        return isBlack ? "src\\images\\blackPawn.png" : "src\\images\\whitePawn.png";
+        return isBlack ? "src/images/blackPawn.png" : "src/images/whitePawn.png";
     }
 
     @Override
@@ -19,12 +19,12 @@ public class Pawn extends Piece {
             if (((currY == 6 && nextY == 4 && board[nextY][currX] == null)
                     || (currY - nextY == 1)) && board[currY - 1][currX] == null && currX == nextX) return true;
             else return currY - nextY == 1 && (currX - nextX == 1 || nextX - currX == 1)
-                    && board[nextY][nextX].isBlack;
+                    && (board[nextY][nextX] != null && board[nextY][nextX].isBlack);
         } else {
             if (((currY == 1 && nextY == 3 && board[nextY][currX] == null)
                     || (nextY - currY == 1)) && board[currY + 1][currX] == null && currX == nextX) return true;
             else return nextY - currY == 1 && (currX - nextX == 1 || nextX - currX == 1)
-                    && !board[nextY][nextX].isBlack;
+                    && (board[nextY][nextX] != null && !board[nextY][nextX].isBlack);
         }
     }
 }

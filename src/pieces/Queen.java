@@ -9,7 +9,7 @@ public class Queen extends Piece {
 
     @Override
     public String getImagePath() {
-        return isBlack ? "src\\images\\blackQueen.png" : "src\\images\\whiteQueen.png";
+        return isBlack ? "src/images/blackQueen.png" : "src/images/whiteQueen.png";
     }
 
     public boolean isLegalMove(int currX, int currY, int nextY, int nextX,Piece[][]board) {
@@ -19,12 +19,12 @@ public class Queen extends Piece {
                 for (int i = currX + 1; i < nextX; i++) {
                     if (board[currY][i] != null) return false;
                 }
-                return board[nextY][nextX].isBlack() != isBlack;
+                return board[nextY][nextX] == null || board[nextY][nextX].isBlack() != isBlack;
             }
             else for (int i = currX - 1; i > nextX ; i--) {
                 if (board[currY][i]!=null) return false;
             }
-            return board[nextY][nextX].isBlack() != isBlack;
+            return board[nextY][nextX] == null || board[nextY][nextX].isBlack() != isBlack;
 
         }
 
@@ -34,12 +34,12 @@ public class Queen extends Piece {
                 for (int i = currY + 1; i < nextY; i++) {
                     if (board[i][currX] != null) return false;
                 }
-                return board[nextY][nextX].isBlack() != isBlack;
+                return board[nextY][nextX] == null || board[nextY][nextX].isBlack() != isBlack;
             }
             else for (int i = currY - 1; i > nextY ; i--) {
                 if (board[i][currX] != null) return false;
             }
-            return board[nextY][nextX].isBlack() != isBlack;
+            return board[nextY][nextX] == null || board[nextY][nextX].isBlack() != isBlack;
         }
 
         //upper left
@@ -47,28 +47,28 @@ public class Queen extends Piece {
             for (int i = 1; i < currX - nextX; i++) {
                 if (board[currY - i][currX - i]!= null) return false;
             }
-            return board[nextY][nextX].isBlack() != isBlack;
+            return board[nextY][nextX] == null || board[nextY][nextX].isBlack() != isBlack;
         }
         //upper right
         else if(nextX - currX == currY - nextY && nextX - currX > 0) {
             for (int i = 1; i < nextX - currX; i++) {
                 if (board[currY - i][currX + i]!=null) return false;
             }
-            return board[nextY][nextX].isBlack() != isBlack;
+            return board[nextY][nextX] == null || board[nextY][nextX].isBlack() != isBlack;
         }
         //lower left
         else if(currX - nextX == nextY - currY && currX - nextX > 0) {
             for (int i = 1; i < currX - nextX; i++) {
                 if (board[currY + i][currX - i] != null) return false;
             }
-            return board[nextY][nextX].isBlack() != isBlack;
+            return board[nextY][nextX] == null || board[nextY][nextX].isBlack() != isBlack;
         }
         //lower right
         else if(nextX - currX == nextY - currY && nextX - currX > 0) {
             for (int i = 1; i < nextX - currX; i++) {
                 if (board[currY + i][currX + i] !=null) return false;
             }
-            return board[nextY][nextX].isBlack() != isBlack;
+            return board[nextY][nextX] == null || board[nextY][nextX].isBlack() != isBlack;
         }
         return false;
     }

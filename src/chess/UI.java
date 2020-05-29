@@ -38,6 +38,10 @@ public class UI implements MouseListener {
     }
 
     public void addGraphic(Piece piece) {
+        if (piece == null) {
+            return;
+        }
+
         piece.addMouseListener(this);
         frame.add(piece);
         frame.setVisible(true);
@@ -63,10 +67,24 @@ public class UI implements MouseListener {
 
     public void movePiece(Piece piece) {
         if (piece != null) {
-            piece.setX(getMouseX() - 34);
-            piece.setY(getMouseY() - 34);
+            piece.setPaintedX(getMouseX() - 34);
+            piece.setPaintedY(getMouseY() - 34);
             piece.repaint();
         }
+    }
+
+    public void movePiece(Piece piece, int x, int y) {
+        if (piece == null) {
+            return;
+        }
+        try {
+            Thread.sleep(250);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        piece.setPaintedX(x);
+        piece.setPaintedY(y);
+        piece.repaint();
     }
 
     @Override
