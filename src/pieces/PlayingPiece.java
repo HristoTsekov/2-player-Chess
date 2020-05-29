@@ -4,9 +4,7 @@ import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.logging.Logger;
+
 
 public abstract class PlayingPiece extends JButton {
     private int x;
@@ -34,6 +32,10 @@ public abstract class PlayingPiece extends JButton {
 
     public abstract String getImagePath();
 
+    public boolean moveIsLegal(int newX, int newY) {
+        return true;
+    }
+
     public void render() {
         if (pressed) {
             int x = (int) MouseInfo.getPointerInfo().getLocation().getX() - getLocation().x;
@@ -48,3 +50,4 @@ public abstract class PlayingPiece extends JButton {
         this.pressed = pressed;
     }
 }
+
