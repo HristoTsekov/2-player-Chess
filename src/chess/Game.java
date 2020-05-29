@@ -40,6 +40,8 @@ public class Game {
                 if (pressedPiece != null) {
                     int col = getCellByCordinate(x);
                     int row = getCellByCordinate(y);
+                    boolean legalMove = pressedPiece.isLegalMove(selectedRow, selectedCol, row, col, board);
+                    System.out.println("legalMove " + legalMove);
                     ui.removePiece(board[row][col]);
 
                     board[selectedRow][selectedCol] = null;

@@ -12,11 +12,12 @@ public abstract class Piece extends JButton {
 
     private int x;
     private int y;
-//    private boolean pressed;
+    public boolean isBlack;
 
-    public Piece(int x, int y) {
+    public Piece(int x, int y,boolean isBlack) {
         this.x = x;
         this.y = y;
+        this.isBlack=isBlack;
         setPreferredSize(new Dimension(40, 40));
 
         setContentAreaFilled(false);
@@ -35,14 +36,6 @@ public abstract class Piece extends JButton {
 
     public abstract String getImagePath();
 
-//    //public void render() {
-//   //     if (pressed) {
-//    //        x = (int) MouseInfo.getPointerInfo().getLocation().getX() - getLocation().x;
-//            y = (int) MouseInfo.getPointerInfo().getLocation().getY() - getLocation().y;
-//            repaint();
-//        }
-//    }
-
     public void setX(int x) {
         this.x = x;
     }
@@ -51,8 +44,8 @@ public abstract class Piece extends JButton {
         this.y = y;
     }
 
-//    public void setPressed(boolean pressed) {
-//        System.out.println("set pressed " + pressed);
-//        this.pressed = pressed;
-//    }
+    public boolean isBlack() {
+        return isBlack;
+    }
+public abstract boolean isLegalMove(int currX, int currY, int nextY, int nextX, Piece[][] board);
 }
